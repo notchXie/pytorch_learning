@@ -48,3 +48,15 @@ plt.plot(epoch_list, loss_list)
 plt.xlabel("epoch")
 plt.ylabel("loss")
 plt.show()
+
+function_pred_x = list(range(0, 10))
+function_pred_y = []
+for i in function_pred_x:
+    x_test = torch.tensor([[i]])
+    y_test = model(x_test)
+    function_pred_y.append(y_test.data)
+
+plt.plot(function_pred_x, function_pred_y)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
